@@ -1,0 +1,17 @@
+{
+  "name": "small-web",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend/api",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run start:dev --workspace=backend/api\" \"npm run dev --workspace=frontend\"",
+    "seed": "npm run seed --workspace=backend/api",
+    "build": "npm run build --workspace=backend/api && npm run build --workspace=frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
